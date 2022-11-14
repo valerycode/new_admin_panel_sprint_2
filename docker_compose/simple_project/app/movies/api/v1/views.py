@@ -51,8 +51,8 @@ class MoviesListApi(MoviesApiMixin, BaseListView):
         context = {
             'count': paginator.count,
             'total_pages': paginator.num_pages,
-            "prev": page.previous_page_number() if page.has_previous() else None,
-            "next": page.next_page_number() if page.has_next() else None,
+            'prev': page.previous_page_number() if page.has_previous() else None,
+            'next': page.next_page_number() if page.has_next() else None,
             'results': list(self.get_queryset()),
         }
         return context
